@@ -1,0 +1,19 @@
+{
+  "name": "discord-checkin-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for check in-out working",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "discord",
+    "bot"
+  ],
+  "author": "Krittin Jaruvisut",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
