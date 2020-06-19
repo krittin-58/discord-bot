@@ -7,7 +7,7 @@ const { configDB } = require('./config/config');
 const employeeSchema = require('./model/employee');
 
 // Database
-mongoose.connect(`mongodb://${configDB.dbHost}:${configDB.dbPort}:${configDB.dbName}`, { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb+srv://${configDB.dbHost}:${configDB.dbPass}@cluster0-coptech-bot-discord-rsv4f.mongodb.net/${configDB.dbName}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection
     .once('open', () => console.log('Database is connected! === Discord CHECK-IN'))
     .on('error', (error) => {
@@ -29,7 +29,7 @@ CoptechBot.on('message', async msg => {
     const id = msg.author.discriminator;
     const text = msg.content;
     const currentChannel = msg.channel.id;
-    const checkInChannel = 'เช็คชื่อ';
+    const checkInChannel = currentChannel;
 
     if (username !== 'Coptech Bot' && id !== '4747' && currentChannel === checkInChannel) {
         switch(text) {
