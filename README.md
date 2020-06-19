@@ -1,5 +1,6 @@
-### config.js
 ````
+config.js
+
 const configDB = {
     dbHost: "localhost",
     dbPort: "27017",
@@ -14,9 +15,10 @@ const configDiscord = {
 };
 
 ````
-### index.js
 - This case, I used cloud.mongodb.com be cluster database.
 ````
+index.js
+
 // Database
 mongoose.connect(`mongodb+srv://${configDB.dbHost}:${configDB.dbPass}@cluster0-coptech-bot-discord-rsv4f.mongodb.net/${configDB.dbName}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true});
 ````
