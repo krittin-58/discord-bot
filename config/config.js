@@ -5,6 +5,12 @@ const configDB = {
     dbPass: "123456",
 };
 
+const configDiscord = {
+    tokenBot: '<TOKEN BOT HERE>',
+    botName: 'YOU NAME BOT',
+    botId: 'YOU BOT ID',
+};
+
 module.exports = {
     configDB
 };

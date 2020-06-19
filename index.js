@@ -3,7 +3,7 @@ const CoptechBot = new Discord.Client();
 const moment = require('moment');
 
 const mongoose = require('mongoose');
-const { configDB } = require('./config/config');
+const { configDB, configDiscord } = require('./config/config');
 const employeeSchema = require('./model/employee');
 
 // Database
@@ -17,7 +17,7 @@ mongoose.connection
 const Employee = mongoose.model('employee', employeeSchema);
 
 // BOT
-CoptechBot.login('<Token discord bot>', () => {
+CoptechBot.login(configDiscord.tokenBot, () => {
 }).catch((error) => console.log('error', error));
 
 CoptechBot.on('ready', () => {
@@ -31,7 +31,7 @@ CoptechBot.on('message', async msg => {
     const currentChannel = msg.channel.id;
     const checkInChannel = currentChannel;
 
-    if (username !== '<bot name>' && id !== '<bot id>' && currentChannel === checkInChannel) {
+    if (username !== configDiscord.botName && id !== configDiscord.botId && currentChannel === checkInChannel) {
         switch(text) {
             case 'check-in':
                 await Employee.create({
