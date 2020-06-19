@@ -1,8 +1,8 @@
 const configDB = {
-    dbHost: "coptech",
+    dbHost: "localhost",
     dbPort: "27017",
     dbName: "discord-checkin",
-    dbPass: "1101485541210",
+    dbPass: "123456",
 };
 
 module.exports = {

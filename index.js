@@ -17,7 +17,7 @@ mongoose.connection
 const Employee = mongoose.model('employee', employeeSchema);
 
 // BOT
-CoptechBot.login('NzIzMDQ4NDc5NzQzNjcyMzMx.Xuw-bw.NppptSO67TKoOkqiY6qzffjx0Rw', () => {
+CoptechBot.login('<Token discord bot>', () => {
 }).catch((error) => console.log('error', error));
 
 CoptechBot.on('ready', () => {
@@ -31,7 +31,7 @@ CoptechBot.on('message', async msg => {
     const currentChannel = msg.channel.id;
     const checkInChannel = currentChannel;
 
-    if (username !== 'Coptech Bot' && id !== '4747' && currentChannel === checkInChannel) {
+    if (username !== '<bot name>' && id !== '<bot id>' && currentChannel === checkInChannel) {
         switch(text) {
             case 'check-in':
                 await Employee.create({
