@@ -12,5 +12,6 @@ const configDiscord = {
 };
 
 module.exports = {
-    configDB
+    configDB,
+    configDiscord
 };
